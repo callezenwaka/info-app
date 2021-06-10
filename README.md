@@ -1,1 +1,1 @@
-# news-demo-app
+# A news demo app
