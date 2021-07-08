@@ -70,8 +70,8 @@
           <!-- <a class="schedule--arrow--btn schedule--right" href="#201" @click="nextDay"><span class="schedule--icon">&#10095;</span></a> -->
         </div>
         <p class="current--date">{{currentDate}}</p>
-        <button type="button" class="schedule--event schedule--button" @click="show = !show; viewEvent();">VIEW EVENT</button>
-        <div v-if="show" class="event--wrapper">
+        <!-- <button type="button" class="schedule--event schedule--button" @click="viewEvent();">VIEW EVENT</button> -->
+        <div class="event--wrapper">
           <div class="event--item" v-for="(task, i) in tasks" :key="i">{{ task.title }}</div>
         </div>
       </div>
@@ -162,6 +162,21 @@ export default {
     fetchDate(event) {
       if (event.target.innerText === "") return;
       this.currentDate = parseInt(event.target.innerText);
+      this.tasks = [];
+      var d1 = new Date(this.year, this.month, this.currentDate);
+      this.events.filter((event) => {
+        var d2 = new Date(
+          new Date(event.date).getFullYear(),
+          new Date(event.date).getMonth(),
+          new Date(event.date).getDate(),
+          0,
+          0,
+          0
+        );
+        if (d1.getTime() == d2.getTime()) {
+          this.tasks.push(event);
+        }
+      });
     },
     previousDay() {
       this.currentDate--;

@@ -16,22 +16,11 @@ const getters = {
 };
 
 const actions = {
-  async addEventImage(context, payload) {
-    try {
-      // api call
-      const data = await eventApi.addEventImage(payload)
-      await context.dispatch('setMessage', {text: 'Image upload successful!', status: true});
-      return data;
-    } catch (err) {
-      await context.dispatch('setMessage', {text: err.message || `Image upload failed!`, status: false});
-      return;
-    }
-	},
   async addEvent(context, payload) {
     try {
       // api call
       const data = await eventApi.addEvent(payload);
-      await context.dispatch('setMessage', {text: data, status: true});
+      await context.dispatch('setMessage', {text: `Event add successful!`, status: true});
       await context.dispatch('getEvents');
       return data;
     } catch (err) {
@@ -80,7 +69,7 @@ const actions = {
     try {
       // api call
       const data = await eventApi.deleteEvent(payload);
-      await context.dispatch('setMessage', {text: data, status: true});
+      await context.dispatch('setMessage', {text: `Event delete successful!`, status: true});
       await context.commit('DELETE_EVENT', payload);
       return data;
     } catch (err) {

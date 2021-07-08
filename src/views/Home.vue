@@ -32,10 +32,9 @@ export default {
   created() {
     this.getEvents();
   },
-  // mounted() {
-  //   console.log("here");
-  //   this.$forceUpdate();
-  // },
+  mounted() {
+    this.getEvents();
+  },
   methods: {
     ...mapActions([
       "addEvent",
@@ -58,5 +57,16 @@ export default {
   padding: 1rem;
   width: 100%;
   transition: all 500ms linear;
+}
+/* mini */
+@media only screen and (min-width: 481px) {
+  .home--wrapper {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* max */
+@media only screen and (min-width: 981px) {
 }
 </style>
