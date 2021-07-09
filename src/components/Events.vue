@@ -72,7 +72,7 @@
         <p class="current--date">{{currentDate}}</p>
         <!-- <button type="button" class="schedule--event schedule--button" @click="viewEvent();">VIEW EVENT</button> -->
         <div class="event--wrapper">
-          <div class="event--item" v-for="(task, i) in tasks" :key="i">{{ task.title }}</div>
+          <div class="event--item" v-for="(task, i) in tasks" :key="i">{{ task.title || 'No event!' }}</div>
         </div>
       </div>
     </div>
