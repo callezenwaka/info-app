@@ -1,0 +1,96 @@
+/* src/assets/event-schedule.css */
+
+.event-schedule {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-schedule h2 {
+    text-align: center;
+    color: #333;
+}
+
+.event-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.event-schedule-table th,
+.event-schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.event-schedule-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.event-schedule-table td {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-schedule-table td:hover {
+    background-color: #f9f9f9;
+}
+
+.event-schedule-table .has-event {
+    background-color: #e6f3ff;
+    font-weight: bold;
+}
+
+.event-schedule-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.event-schedule-nav button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-schedule-nav button:hover {
+    background-color: #45a049;
+}
+
+.event-list {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.event-list h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.event-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.event-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.event-list p {
+    color: #666;
+}
